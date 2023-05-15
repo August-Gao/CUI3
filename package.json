@@ -1,0 +1,35 @@
+{
+  "name": "root",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "author": "GaoYu",
+  "license": "MIT",
+  "packageManager": "pnpm@8.5.1",
+  "engines": {
+    "node": ">=18",
+    "pnpm": ">=8"
+  },
+  "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "serve": "pnpm run --parallel serve",
+    "build": "pnpm run --parallel build"
+  },
+  "devDependencies": {
+    "@radix-ui/colors": "^0.1.8",
+    "@types/node": "^20.1.4",
+    "@vanilla-extract/css": "^1.11.0",
+    "polished": "^4.2.2",
+    "rambda": "^7.5.0",
+    "typescript": "^5.0.4"
+  },
+  "pnpm": {
+    "peerDependencyRules": {
+      "ignoreMissing": [],
+      "allowedVersions": {}
+    }
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  }
+}

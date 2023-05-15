@@ -1,0 +1,8 @@
+{
+  "name": "@config/ts-config",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "author": "GaoYu",
+  "license": "MIT"
+}
