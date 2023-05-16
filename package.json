@@ -21,7 +21,9 @@
     "@vanilla-extract/css": "^1.11.0",
     "polished": "^4.2.2",
     "rambda": "^7.5.0",
-    "typescript": "^5.0.4"
+    "typescript": "^5.0.4",
+    "vite": "^4.3.6",
+    "vitest": "^0.31.0"
   },
   "pnpm": {
     "peerDependencyRules": {
