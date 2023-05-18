@@ -57,6 +57,8 @@ importers:
         specifier: ^1.6.5
         version: 1.6.5(typescript@5.0.4)
 
+  app/materials: {}
+
   config/ts: {}
 
   core/dom: {}
@@ -66,8 +68,6 @@ importers:
   core/mouse: {}
 
   core/theme: {}
-
-  core/wheel: {}
 
 packages:
 

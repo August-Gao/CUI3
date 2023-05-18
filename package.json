@@ -16,7 +16,6 @@
     "build": "pnpm run --parallel build"
   },
   "devDependencies": {
-    "@radix-ui/colors": "^0.1.8",
     "@types/node": "^20.1.4",
     "@vanilla-extract/css": "^1.11.0",
     "@vanilla-extract/css-utils": "^0.1.3",
