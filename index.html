@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+
+</head>
+
+<body>
+    <style>
+        .sketch {
+            position: fixed;
+            width: 700px;
+            height: 700px;
+            border: 1px solid red;
+        }
+
+        .item1 {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: blue;
+            transform: matrix3d(1, 0, 0, 0,
+                    0, 1, 0, 0,
+                    0, 0, 1, 0,
+                    0, 0, 1, 1);
+        }
+    </style>
+
+    <div class="sketch">
+        <div class="item1"></div>
+    </div>
+
+
+    <script>
+        const item1 = document.querySelector('.item1')
+
+        item1.addEventListener('mousedown', (event) => {
+            const pageX = event.pageX
+            const pageY = event.pageY
+
+            let origin = window.getComputedStyle(item1)['transform'].match(/[-+]?\d*\.?\d+(?=,|\))/g).map(parseFloat)
+
+
+            const fu = _.throttle(function (event) {
+                const x = event.pageX - pageX
+                const y = event.pageY - pageY
+
+                const a = [...origin]
+
+                a[12] += x
+                a[13] += y
+
+
+                item1.style.transform = `matrix3d(${a.join(",")})`
+
+            }, 20)
+            document.addEventListener('mousemove', fu)
+            item1.addEventListener('mouseup', (event) => {
+                console.log(11)
+                document.removeEventListener('mousemove', fu)
+            })
+        })
+
+    </script>
+</body>
+
+</html>
